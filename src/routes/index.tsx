@@ -678,12 +678,59 @@ function Transport() {
 /* ───────────────────────── Legislació ───────────────────────── */
 
 function Legislacio() {
-  const items = [
-    { icon: ScrollText, title: "Constitució local", desc: "El marc fonamental del municipi." },
-    { icon: Scale, title: "Normatives", desc: "Ordenances vigents al terme municipal." },
-    { icon: Building2, title: "Organització administrativa", desc: "Estructura institucional de Bellacosta." },
-    { icon: BookOpen, title: "Reglaments", desc: "Reglaments municipals i procediments." },
+  const articles = [
+    {
+      num: "1",
+      title: "Dret als mínims universal per la vida",
+      text: "Tota persona té dret a l'educació, sanitat, una vivenda, un treball i tot el necessari per al seu desenvolupament durant totes les edats (nens, adults i persones de la tercera edat).",
+    },
+    {
+      num: "2",
+      title: "Llibertat d'Expressió i de Pensament",
+      text: "Es garanteix la llibertat absoluta d'expressió, incloent-hi l'humor, la crítica i les idees incòmodes, sempre que no constitueixin amenaces directes de violència. Ningú no pot ser perseguit per les seves opinions si no fa mal als altres.",
+    },
+    {
+      num: "3",
+      title: "Igualtat davant la Llei",
+      text: "Tots els individus són iguals davant la llei, sense distinció de sexe, origen, ideologia o condició. Es rebutja qualsevol discriminació positiva o negativa basada en identitats de grup.",
+    },
+    {
+      num: "4",
+      title: "Deures Fonamentals",
+      text: "Tot membre del territori té el deure de: actuar amb responsabilitat dels seus actes, respectar als altres i contribuir positivament segons les seves capacitats.",
+    },
+    {
+      num: "5",
+      title: "Seguretat i Protecció",
+      text: "La seguretat és un dret fonamental. La comunitat té dret a seguretat davant amenaces internes i externes. Es promou la proporcionalitat en l'ús de la força i es rebutja la violència gratuïta.",
+    },
+    {
+      num: "6",
+      title: "Civisme i Respecte Mutu",
+      text: "Es fomenta el civisme, el respecte a la propietat aliena i el bon tracte entre persones. L'assetjament, la intimidació i la cancel·lació sistemàtica es consideren infraccions greus.",
+    },
+    {
+      num: "7",
+      title: "Economia i Lliure Iniciativa",
+      text: "Es reconeix el dret a la propietat privada i a la lliure empresa. L'economia ha de ser el més lliure possible, amb intervenció mínima de qualsevol autoritat central. La innovació i la competència honesta són valors protegits.",
+    },
+    {
+      num: "8",
+      title: "Hisenda i Fiscalitat",
+      text: "Els impostos han de ser justos, transparents i proporcionals. Es prohibeix l'ús de la hisenda com a eina de control social o redistribució ideològica. Tot ciutadà té dret a saber exactament on van els seus diners i exigir-ne rendició de comptes.",
+    },
+    {
+      num: "9",
+      title: "Llengua i Cultura",
+      text: "El català, el castellà i l'anglès són les llengües de treball principals. Es promou el multilingüisme i el respecte per les llengües maternes. No s'imposarà cap llengua per motius ideològics, però es valorarà l'esforç d'integració lingüística.",
+    },
+    {
+      num: "10",
+      title: "Principi de Realitat i Millora Contínua",
+      text: "Tota llei i decisió ha d'estar fonamentada en la realitat observable i en l'evidència disponible. Els polítics es comprometen a revisar periòdicament les seves regles per corregir errors i adaptar-se a noves circumstàncies, sempre prioritzant la veritat per sobre de la comoditat.",
+    },
   ];
+
   return (
     <section id="legislacio" className="relative py-24 md:py-32 bg-primary/[0.04]">
       <div className="container-bell">
@@ -693,9 +740,24 @@ function Legislacio() {
           subtitle="Transparència, normativa i organització institucional del municipi."
           center
         />
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {items.map((it) => (
-            <PlaceholderCard key={it.title} {...it} />
+        <div className="mt-16 grid gap-6 md:grid-cols-2">
+          {articles.map((a) => (
+            <div
+              key={a.num}
+              className="group relative overflow-hidden rounded-2xl border border-border bg-card p-7 transition-all hover:border-secondary hover:shadow-lg hover:-translate-y-1"
+            >
+              <div className="flex items-center gap-4">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground font-display text-lg font-semibold">
+                  {a.num}
+                </div>
+                <h3 className="font-display text-xl font-semibold text-foreground leading-tight">
+                  {a.title}
+                </h3>
+              </div>
+              <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
+                {a.text}
+              </p>
+            </div>
           ))}
         </div>
       </div>
