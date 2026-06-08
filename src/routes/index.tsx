@@ -614,22 +614,25 @@ function Turisme() {
         </div>
 
         <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {activities.map((a) => (
-            <div
-              key={a.title}
-              className="group relative overflow-hidden rounded-2xl border border-border bg-card p-7 transition-all hover:border-secondary hover:shadow-lg hover:-translate-y-1"
-            >
-              <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/15 text-primary group-hover:bg-secondary group-hover:text-primary-foreground transition-colors">
-                <a.icon className="h-5 w-5" />
+          {activities.map((a) => {
+            const Icon = a.icon;
+            return (
+              <div
+                key={a.title}
+                className="group relative overflow-hidden rounded-2xl border border-border bg-card p-7 transition-all hover:border-secondary hover:shadow-lg hover:-translate-y-1"
+              >
+                <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/15 text-primary group-hover:bg-secondary group-hover:text-primary-foreground transition-colors">
+                  <Icon className="h-5 w-5" />
+                </div>
+                <h3 className="font-display text-xl font-semibold text-foreground leading-tight">
+                  {a.title}
+                </h3>
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+                  {a.desc}
+                </p>
               </div>
-              <h3 className="font-display text-xl font-semibold text-foreground leading-tight">
-                {a.title}
-              </h3>
-              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-                {a.desc}
-              </p>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         <div className="mt-16 max-w-3xl mx-auto rounded-2xl border border-border bg-card p-8 md:p-10 text-center">
