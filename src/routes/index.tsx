@@ -33,6 +33,8 @@ import {
   ScrollText,
   Flame,
   Heart,
+  Ship,
+  Landmark,
 } from "lucide-react";
 
 import heroImg from "@/assets/hero-bellacosta.jpg";
@@ -561,12 +563,34 @@ function Economia() {
 /* ───────────────────────── Turisme ───────────────────────── */
 
 function Turisme() {
-  const items = [
-    { icon: Compass, title: "Objectius", desc: "Línies estratègiques de creixement turístic sostenible." },
-    { icon: Sparkles, title: "Projectes", desc: "Iniciatives en marxa per posar Bellacosta al mapa." },
-    { icon: Heart, title: "Campanyes", desc: "Promoció nacional i internacional." },
-    { icon: ArrowRight, title: "Futur", desc: "Visió 2030 per a una destinació de referència." },
+  const activities = [
+    {
+      icon: Waves,
+      title: "Ruta amb moto d'aigua per la badia",
+      desc: "Una de les activitats més emocionants que es poden fer és una ruta amb moto d'aigua per la badia de Bellacosta. Durant el recorregut es poden veure cales amagades, precipicis i les aigües cristal·lines de la Costa Brava. És una activitat plena d'adrenalina on la sensació de velocitat sobre el mar i les vistes fan que sigui una experiència única. A més, moltes rutes permeten parar-se per banyar-se o fer fotografies del paisatge.",
+    },
+    {
+      icon: Ship,
+      title: "Mini ferri fins a les Illes Medes",
+      desc: "Una altra activitat molt popular és agafar un mini ferri fins a les Illes Medes. Aquest ferri és especial perquè té una part inferior de vidre que permet observar el fons marí i els peixos mentre es navega. Durant el trajecte es poden veure bancs de peixos, plantes marines i fins i tot alguna estrella de mar. És una activitat perfecta per a famílies i per a persones que volen descobrir el món submarí sense necessitat de bussejar.",
+    },
+    {
+      icon: Fish,
+      title: "Sortida de submarinisme a les Illes Medes",
+      desc: "Les Illes Medes són un dels millors llocs de tota la Mediterrània per practicar submarinisme. Les seves aigües protegides tenen una gran biodiversitat marina. Els submarinistes poden veure peixos grans, pops, coralls, estrelles de mar i coves submarines impressionants. Les excursions solen sortir des del port de L'Estartit o directament des de Bellacosta. És una experiència increïble tant per a experts com per a principiants.",
+    },
+    {
+      icon: Sun,
+      title: "Cala Montgó",
+      desc: "La Cala Montgó és una de les platges més famoses de la zona. Té sorra fina, aigües tranquil·les i està envoltada de natura i tranquil·litat. És ideal per passar el dia en família, prendre el sol o fer esport com el pàdel surf i el caiac. A l'estiu hi ha molt ambient i diversos restaurants prop de la platja.",
+    },
+    {
+      icon: Landmark,
+      title: "Ruïnes d'Empúries",
+      desc: "Les Ruïnes d'Empúries són un dels llocs històrics més importants de Catalunya. En aquest espai arqueològic es poden veure restes de les antigues civilitzacions gregues i romanes. Passejant per les ruïnes es poden veure antics temples, mosaics i carrers de fa milers d'anys. A més, el lloc té unes vistes espectaculars al mar Mediterrani.",
+    },
   ];
+
   return (
     <section
       id="turisme"
@@ -576,13 +600,43 @@ function Turisme() {
         <SectionHeader
           eyebrow="Apartat 5"
           title="Estratègia Turística"
-          subtitle="Un pla integral per fer de Bellacosta una destinació mediterrània premium, respectuosa amb el territori i la seva gent."
+          subtitle="Descobreix Bellacosta i la Costa Brava — un dels pobles més bonics de la costa catalana."
           center
         />
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {items.map((it) => (
-            <PlaceholderCard key={it.title} {...it} />
+
+        <div className="mt-12 max-w-3xl mx-auto text-center text-muted-foreground leading-relaxed">
+          <p>
+            Bellacosta és conegut per les seves platges, les seves aigües cristalines, la gastronomia marinera i les activitats aquàtiques. A prop del poble també hi trobem les magnífiques Illes Medes, un espai ple de vida marina.
+          </p>
+          <p className="mt-4">
+            A continuació, us presentem alguns dels punts turístics i activitats més espectaculars de la zona.
+          </p>
+        </div>
+
+        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {activities.map((a) => (
+            <div
+              key={a.title}
+              className="group relative overflow-hidden rounded-2xl border border-border bg-card p-7 transition-all hover:border-secondary hover:shadow-lg hover:-translate-y-1"
+            >
+              <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/15 text-primary group-hover:bg-secondary group-hover:text-primary-foreground transition-colors">
+                <a.icon className="h-5 w-5" />
+              </div>
+              <h3 className="font-display text-xl font-semibold text-foreground leading-tight">
+                {a.title}
+              </h3>
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+                {a.desc}
+              </p>
+            </div>
           ))}
+        </div>
+
+        <div className="mt-16 max-w-3xl mx-auto rounded-2xl border border-border bg-card p-8 md:p-10 text-center">
+          <h3 className="font-display text-2xl font-semibold text-primary">Conclusió</h3>
+          <p className="mt-4 text-muted-foreground leading-relaxed">
+            Bellacosta i les Illes Medes són un destí perfecte per gaudir del mar, la natura i la història. Les activitats aquàtiques, les platges espectaculars i els paisatges mediterranis fan que sigui un lloc ideal per passar unes vacances inoblidables.
+          </p>
         </div>
       </div>
     </section>
