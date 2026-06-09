@@ -38,7 +38,8 @@ import {
 } from "lucide-react";
 
 import heroImg from "@/assets/hero-bellacosta.jpg";
-import escutImg from "@/assets/escut-bellacosta.png";
+import escutImg from "@/assets/escut-real.png.asset.json";
+import banderaImg from "@/assets/bandera-real.png.asset.json";
 import territoriImg from "@/assets/territori.jpg";
 import economiaImg from "@/assets/economia.jpg";
 import religioImg from "@/assets/religio.jpg";
