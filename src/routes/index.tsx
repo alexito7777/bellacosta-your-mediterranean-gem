@@ -573,37 +573,102 @@ function Escut() {
 /* ───────────────────────── Economia ───────────────────────── */
 
 function Economia() {
-  const items = [
-    { icon: Sun, title: "Turisme", desc: "Motor principal de l'economia local." },
-    { icon: Fish, title: "Pesca", desc: "Tradició mariner i pesca artesanal." },
-    { icon: Store, title: "Comerç", desc: "Petit comerç i mercats de proximitat." },
-    { icon: Briefcase, title: "Serveis", desc: "Hostaleria, restauració i serveis professionals." },
-    { icon: Sparkles, title: "Altres sectors", desc: "Artesania, agricultura i indústria local." },
+  const sectors = [
+    {
+      icon: Fish,
+      title: "Sector Primari",
+      points: [
+        "Aprofitant les planes fèrtils i els aiguamolls propers.",
+        "Activitat destacada: Agricultura de qualitat i productes locals (vi, oli, fruita, arròs en zones humides).",
+        "Pesca artesanal i aqüicultura a la badia.",
+        "Cooperatives agrícoles i cellers de vins de l'Empordà (Garnatxa, Carinyena).",
+        "Granges ecològiques i producció d'hortalisses.",
+        "Flota pesquera petita a Roses i empreses d'aqüicultura.",
+        "Mercats setmanals de productes km0.",
+      ],
+    },
+    {
+      icon: Briefcase,
+      title: "Sector Secundari",
+      points: [
+        "Indústria lleugera relacionada amb el turisme i l'alimentació.",
+        "Construcció i manteniment d'infraestructures turístiques (sostenible).",
+        "Petites fàbriques d'elaboració d'aliments (conserves de peix, embotits).",
+        "Empreses de construcció ecològica i rehabilitació d'habitatges turístics.",
+        "Tallers de reparació nàutica i manteniment de vaixells.",
+        "Altres serveis (administració, sanitat, educació, tecnologia) (10-13%).",
+        "Serveis públics i privats per a residents i turistes.",
+        "Petita presència de tecnologies verdes (energies renovables, gestió d'aigua).",
+      ],
+    },
+    {
+      icon: Store,
+      title: "Sector Terciari",
+      points: [
+        "És el motor econòmic principal gràcies a la ubicació costanera i la marina d'Empuriabrava (una de les més grans d'Europa).",
+        "Subsectors destacats:",
+        "Allotjament (hotels, apartaments turístics, càmpings i residències de luxe).",
+        "Restauració i oci.",
+        "Nàutica i esports aquàtics.",
+        "Comerç minorista orientat al turista.",
+      ],
+    },
+    {
+      icon: Sparkles,
+      title: "Empreses i Comerços",
+      points: [
+        "Hotels i resorts com Hotel Marina Palace o cadenes internacionals.",
+        "Xarxes de xalets i apartaments turístics de lloguer (Airbnb i gestors locals).",
+        "Ports esportius i empreses de lloguer de vaixells, kitesurf, paddle i immersió.",
+        "Restaurants de peix fresc i cuina empordanesa (ex: arrossos, anxoves de l'Escala, vins DO Empordà).",
+        "Botigues de souvenirs, roba de platja, equipament nàutic i supermercats turístics.",
+      ],
+    },
   ];
+
   return (
     <section id="economia" className="relative py-24 md:py-32">
-      <div className="container-bell grid gap-16 lg:grid-cols-[1fr_1.4fr] items-start">
-        <div className="lg:sticky lg:top-28">
-          <SectionHeader
-            eyebrow="Apartat 4"
-            title="Activitat Econòmica"
-            subtitle="Els pilars que sostenen i fan créixer la vida econòmica de Bellacosta."
+      <div className="container-bell">
+        <SectionHeader
+          eyebrow="Apartat 4"
+          title="Activitat Econòmica"
+          subtitle="Els pilars que sostenen i fan créixer la vida econòmica de Bellacosta."
+        />
+        <div className="mt-12 overflow-hidden rounded-2xl border border-border shadow-lg">
+          <img
+            src={economiaImg}
+            alt="Port pesquer de Bellacosta al capvespre"
+            width={1600}
+            height={700}
+            loading="lazy"
+            className="aspect-[21/9] w-full object-cover"
           />
-          <div className="mt-8 overflow-hidden rounded-2xl border border-border shadow-lg">
-            <img
-              src={economiaImg}
-              alt="Port pesquer de Bellacosta al capvespre"
-              width={1280}
-              height={800}
-              loading="lazy"
-              className="aspect-[4/3] w-full object-cover"
-            />
-          </div>
         </div>
-        <div className="grid gap-5 sm:grid-cols-2">
-          {items.map((it) => (
-            <PlaceholderCard key={it.title} {...it} />
-          ))}
+        <div className="mt-12 grid gap-6 md:grid-cols-2">
+          {sectors.map((s) => {
+            const Icon = s.icon;
+            return (
+              <article
+                key={s.title}
+                className="rounded-2xl border border-border bg-card p-7 shadow-sm transition hover:shadow-md"
+              >
+                <div className="flex items-center gap-3">
+                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                    <Icon className="h-5 w-5" />
+                  </span>
+                  <h3 className="font-display text-2xl text-foreground">{s.title}</h3>
+                </div>
+                <ul className="mt-5 space-y-2 text-sm leading-relaxed text-muted-foreground">
+                  {s.points.map((p, i) => (
+                    <li key={i} className="flex gap-2">
+                      <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary/60" />
+                      <span>{p}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>
