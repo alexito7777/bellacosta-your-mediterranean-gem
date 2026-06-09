@@ -35,6 +35,7 @@ import {
   Heart,
   Ship,
   Landmark,
+  Train,
 } from "lucide-react";
 
 import heroImg from "@/assets/hero-bellacosta.jpg";
@@ -772,7 +773,7 @@ function Transport() {
         <SectionHeader
           eyebrow="Apartat 6"
           title="Sistema de transport Bellacosta"
-          subtitle="Una ciutat connectada, respectuosa amb el medi ambient."
+          subtitle="Sistema de transport públic: trens i busos"
           center
         />
 
@@ -780,7 +781,7 @@ function Transport() {
           <div className="rounded-3xl overflow-hidden shadow-elegant">
             <img
               src={transportImg}
-              alt="Autobús elèctic de Bellacosta circulant per la costa"
+              alt="Vista de Bellacosta amb el Coliseu romà de fons, carretera costanera i parada de bus amb plaques solars"
               className="w-full h-full object-cover"
               loading="lazy"
               width={800}
@@ -790,7 +791,7 @@ function Transport() {
 
           <div className="space-y-8">
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Per Bellacosta hem creat una sèrie de vehicles de transport públics que fan que la nostra ciutat sigui ecològica i que no contamini.
+              A la imatge podem veure com seria un dia normal a la nostra ciutat. De fons tenim una còpia del Coliseu romà. També hi ha una carretera que passa al voltant de la costa, que és per on passa l'autobús.
             </p>
 
             <div className="rounded-2xl bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/10 p-8 space-y-6">
@@ -801,7 +802,7 @@ function Transport() {
                 <h3 className="font-display text-2xl text-foreground">Autobusos elèctrics</h3>
               </div>
               <p className="text-muted-foreground leading-relaxed">
-                Els nous autobusos són elèctrics, és a dir que no fan soroll i no contaminen. Ajuden a l'ecosistema sense haver d'utilitzar combustibles. El que fa que a la nostra ciutat no hi hagi gairebé benzineres.
+                Els nous autobusos són elèctrics, és a dir que no fan soroll i no contaminen. Ajuden a l'ecosistema sense haver d'utilitzar combustibles. El que fa que a la nostra ciutat no hi hagi gairebé benzineres. A més, hi ha un exemple de com seria una parada de bús a la nostra ciutat. La parada té sostre, per si plou, i al sostre hi ha plaques solars, per aprofitar l'energia que ens aporta el sol.
               </p>
               <div className="flex flex-wrap gap-3">
                 <span className="inline-flex items-center gap-2 rounded-full bg-emerald-100 text-emerald-700 px-4 py-2 text-sm font-medium">
@@ -818,18 +819,51 @@ function Transport() {
                 </span>
               </div>
             </div>
+          </div>
+        </div>
 
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-xl border border-border bg-card p-6 space-y-3">
-                <Car className="w-6 h-6 text-primary" />
-                <h4 className="font-display text-lg">Mobilitat sostenible</h4>
-                <p className="text-sm text-muted-foreground">Carrils bici i vianants prioritaris per una ciutat amable.</p>
+        <div className="mt-16 grid gap-8 md:grid-cols-2">
+          <div className="rounded-2xl bg-gradient-to-br from-sky-50 to-sky-100/50 border border-sky-200/60 p-8 space-y-6">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-xl bg-sky-500/10 flex items-center justify-center text-sky-600">
+                <Train className="w-6 h-6" />
               </div>
-              <div className="rounded-xl border border-border bg-card p-6 space-y-3">
-                <Anchor className="w-6 h-6 text-primary" />
-                <h4 className="font-display text-lg">Port verd</h4>
-                <p className="text-sm text-muted-foreground">Connexions marítimes amb baixa petjada de carboni.</p>
+              <h3 className="font-display text-2xl text-foreground">Trens d'hidrogen</h3>
+            </div>
+            <p className="text-muted-foreground leading-relaxed">
+              Hem dissenyat uns trens que generen la seva pròpia electricitat combinant hidrogen (que està produït al port mitjançant energia solar i eòlica) amb oxigen. L'únic residu que expulsa pel sostre és vapor d'aigua.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <span className="inline-flex items-center gap-2 rounded-full bg-sky-100 text-sky-700 px-4 py-2 text-sm font-medium">
+                <Sparkles className="w-4 h-4" />
+                Hidrogen verd
+              </span>
+              <span className="inline-flex items-center gap-2 rounded-full bg-cyan-100 text-cyan-700 px-4 py-2 text-sm font-medium">
+                <Waves className="w-4 h-4" />
+                Vapor d'aigua
+              </span>
+            </div>
+          </div>
+
+          <div className="rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100/50 border border-amber-200/60 p-8 space-y-6">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-600">
+                <Car className="w-6 h-6" />
               </div>
+              <h3 className="font-display text-2xl text-foreground">Transport privat</h3>
+            </div>
+            <p className="text-muted-foreground leading-relaxed">
+              Hem creat carreteres amples i espacioses per cotxes, motos, furgonetes, camions i autobusos. A més, hem fet carrils bici per cada sentit i un passeig marítim on anar a passejar amb família i amics.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <span className="inline-flex items-center gap-2 rounded-full bg-amber-100 text-amber-700 px-4 py-2 text-sm font-medium">
+                <Car className="w-4 h-4" />
+                Carreteres amples
+              </span>
+              <span className="inline-flex items-center gap-2 rounded-full bg-emerald-100 text-emerald-700 px-4 py-2 text-sm font-medium">
+                <Bike className="w-4 h-4" />
+                Carrils bici
+              </span>
             </div>
           </div>
         </div>
