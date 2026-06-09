@@ -38,7 +38,8 @@ import {
 } from "lucide-react";
 
 import heroImg from "@/assets/hero-bellacosta.jpg";
-import escutImg from "@/assets/escut-bellacosta.png";
+import escutImg from "@/assets/escut-real.png.asset.json";
+import banderaImg from "@/assets/bandera-real.png.asset.json";
 import territoriImg from "@/assets/territori.jpg";
 import economiaImg from "@/assets/economia.jpg";
 import religioImg from "@/assets/religio.jpg";
@@ -467,50 +468,99 @@ function Himne() {
 /* ───────────────────────── Escut ───────────────────────── */
 
 function Escut() {
+  const elements = [
+    { sym: "Gavina", meaning: "Llibertat i aire fresc" },
+    { sym: "Pi", meaning: "Natura i vida" },
+    { sym: "Torre", meaning: "Protecció i història" },
+    { sym: "Vaixell", meaning: "Mar i aventura" },
+    { sym: "Senyera", meaning: "Orgull català" },
+    { sym: "Corona", meaning: "Dignitat i reconeixement" },
+  ];
   return (
     <section id="escut" className="relative py-24 md:py-32 bg-primary text-primary-foreground overflow-hidden">
       <div className="absolute inset-0 opacity-10 [background-image:radial-gradient(circle_at_20%_20%,white_1px,transparent_1px)] [background-size:32px_32px]" />
       <div className="container-bell relative">
         <div className="text-center">
           <p className="eyebrow text-secondary">Apartat 3</p>
-          <h2 className="mt-4 font-display text-5xl md:text-6xl font-semibold">L'Escut</h2>
+          <h2 className="mt-4 font-display text-5xl md:text-6xl font-semibold">L'Escut i la Bandera</h2>
           <div className="mt-6 h-px w-24 mx-auto bg-secondary/60" />
+          <p className="mt-6 max-w-2xl mx-auto text-white/80">
+            Els símbols oficials de Bellacosta expressen la nostra identitat mediterrània,
+            la història mariner i l'orgull català.
+          </p>
         </div>
 
+        {/* Escut */}
         <div className="mt-16 grid gap-12 lg:grid-cols-[1fr_1fr] items-center">
           <div className="flex justify-center">
             <div className="relative">
               <div className="absolute -inset-10 rounded-full bg-secondary/20 blur-3xl" />
               <img
-                src={escutImg}
+                src={escutImg.url}
                 alt="Escut heràldic oficial de Bellacosta"
-                width={1024}
-                height={1024}
                 loading="lazy"
                 className="relative w-72 sm:w-80 md:w-96 drop-shadow-2xl"
               />
             </div>
           </div>
 
-          <div className="grid gap-5">
-            {[
-              { icon: Shield, title: "Descripció", desc: "Forma, colors i elements heràldics oficials." },
-              { icon: Sparkles, title: "Simbologia", desc: "Significat dels emblemes que conformen l'escut." },
-              { icon: Flame, title: "Història", desc: "Origen i evolució al llarg dels segles." },
-            ].map((it) => (
-              <div
-                key={it.title}
-                className="rounded-2xl border border-white/15 bg-white/5 p-6 backdrop-blur-sm"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-secondary text-primary">
-                    <it.icon className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <h3 className="font-display text-xl font-semibold">{it.title}</h3>
-                    <p className="mt-1 text-sm text-white/70">{it.desc}</p>
-                  </div>
-                </div>
+          <div>
+            <h3 className="font-display text-3xl font-semibold">L'Escut</h3>
+            <p className="mt-4 text-white/85 leading-relaxed">
+              Al mig hi ha un rombe amb la <strong>Senyera</strong>, les quatre barres vermelles sobre fons groc.
+              Això vol dir que som catalans i que estimem la nostra terra.
+            </p>
+            <ul className="mt-6 space-y-3 text-white/85">
+              <li><strong>A dalt</strong>, una <strong>gavina</strong>, que representa la llibertat i el cel.</li>
+              <li><strong>A l'esquerra</strong>, un <strong>pi</strong>, que simbolitza la natura i que som una ciutat verda i mediterrània.</li>
+              <li><strong>A la dreta</strong>, una <strong>torre de guaita</strong>, que recorda la protecció i la història de la ciutat, com les torres que vigilaven la costa.</li>
+              <li><strong>A baix</strong>, un <strong>vaixell</strong>, que representa el mar, el comerç i la vida marinera.</li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Bandera */}
+        <div className="mt-20 grid gap-12 lg:grid-cols-[1fr_1fr] items-center">
+          <div className="order-2 lg:order-1">
+            <h3 className="font-display text-3xl font-semibold">La Bandera</h3>
+            <p className="mt-4 text-white/85 leading-relaxed">La bandera té tres franges:</p>
+            <ul className="mt-4 space-y-2 text-white/85">
+              <li><span className="inline-block w-3 h-3 rounded-sm bg-sky-400 mr-2 align-middle" /><strong>Blava</strong> a dalt, pel cel.</li>
+              <li><span className="inline-block w-3 h-3 rounded-sm bg-yellow-400 mr-2 align-middle" /><strong>Groga</strong> al mig, per la llum del sol.</li>
+              <li><span className="inline-block w-3 h-3 rounded-sm bg-teal-400 mr-2 align-middle" /><strong>Turquesa</strong> a baix, pel mar.</li>
+            </ul>
+            <p className="mt-4 text-white/85 leading-relaxed">
+              Al centre hi ha l'escut amb tots els símbols. Els colors són alegres i mediterranis, com la nostra ciutat.
+            </p>
+
+            <h3 className="mt-8 font-display text-2xl font-semibold">La Corona</h3>
+            <p className="mt-3 text-white/85 leading-relaxed">
+              A sobre de l'escut hi ha una corona amb <strong>cinc florons</strong>, que vol dir honor i importància.
+              Representa que la ciutat té història i orgull.
+            </p>
+          </div>
+          <div className="order-1 lg:order-2 flex justify-center">
+            <div className="relative">
+              <div className="absolute -inset-10 rounded-full bg-secondary/20 blur-3xl" />
+              <img
+                src={banderaImg.url}
+                alt="Bandera oficial de Bellacosta"
+                loading="lazy"
+                className="relative w-80 sm:w-96 md:w-[28rem] rounded-lg shadow-2xl"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Taula significat general */}
+        <div className="mt-20">
+          <h3 className="font-display text-3xl font-semibold text-center">El significat general</h3>
+          <p className="mt-3 text-center text-white/75">Cada element diu alguna cosa sobre nosaltres.</p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {elements.map((el) => (
+              <div key={el.sym} className="rounded-2xl border border-white/15 bg-white/5 p-6 backdrop-blur-sm">
+                <div className="font-display text-xl font-semibold text-secondary">{el.sym}</div>
+                <p className="mt-1 text-sm text-white/80">{el.meaning}</p>
               </div>
             ))}
           </div>
