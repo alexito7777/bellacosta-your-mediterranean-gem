@@ -763,27 +763,75 @@ function Turisme() {
 
 /* ───────────────────────── Transport ───────────────────────── */
 
+import transportImg from "@/assets/transport.jpg";
+
 function Transport() {
-  const items = [
-    { icon: Car, title: "Carreteres", desc: "Xarxa viària i accessos al municipi." },
-    { icon: Bus, title: "Transport públic", desc: "Línies d'autobús i connexions ferroviàries." },
-    { icon: Anchor, title: "Port", desc: "Instal·lacions portuàries i serveis nàutics." },
-    { icon: Bike, title: "Bicicleta", desc: "Carrils bici i rutes cicloturistes." },
-    { icon: Leaf, title: "Mobilitat sostenible", desc: "Iniciatives per a una mobilitat verda." },
-  ];
   return (
     <section id="transport" className="relative py-24 md:py-32">
       <div className="container-bell">
         <SectionHeader
           eyebrow="Apartat 6"
-          title="Sistemes de Transport"
-          subtitle="Connectats amb el món, respectuosos amb l'entorn."
+          title="Sistema de transport Bellacosta"
+          subtitle="Una ciutat connectada, respectuosa amb el medi ambient."
           center
         />
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {items.map((it) => (
-            <PlaceholderCard key={it.title} {...it} />
-          ))}
+
+        <div className="mt-16 grid gap-12 lg:grid-cols-2 items-center">
+          <div className="rounded-3xl overflow-hidden shadow-elegant">
+            <img
+              src={transportImg}
+              alt="Autobús elèctic de Bellacosta circulant per la costa"
+              className="w-full h-full object-cover"
+              loading="lazy"
+              width={800}
+              height={600}
+            />
+          </div>
+
+          <div className="space-y-8">
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Per Bellacosta hem creat una sèrie de vehicles de transport públics que fan que la nostra ciutat sigui ecològica i que no contamini.
+            </p>
+
+            <div className="rounded-2xl bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/10 p-8 space-y-6">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+                  <Bus className="w-6 h-6" />
+                </div>
+                <h3 className="font-display text-2xl text-foreground">Autobusos elèctrics</h3>
+              </div>
+              <p className="text-muted-foreground leading-relaxed">
+                Els nous autobusos són elèctrics, és a dir que no fan soroll i no contaminen. Ajuden a l'ecosistema sense haver d'utilitzar combustibles. El que fa que a la nostra ciutat no hi hagi gairebé benzineres.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <span className="inline-flex items-center gap-2 rounded-full bg-emerald-100 text-emerald-700 px-4 py-2 text-sm font-medium">
+                  <Leaf className="w-4 h-4" />
+                  Zero emissions
+                </span>
+                <span className="inline-flex items-center gap-2 rounded-full bg-sky-100 text-sky-700 px-4 py-2 text-sm font-medium">
+                  <Waves className="w-4 h-4" />
+                  Silenciosos
+                </span>
+                <span className="inline-flex items-center gap-2 rounded-full bg-amber-100 text-amber-700 px-4 py-2 text-sm font-medium">
+                  <Sun className="w-4 h-4" />
+                  Energia neta
+                </span>
+              </div>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div className="rounded-xl border border-border bg-card p-6 space-y-3">
+                <Car className="w-6 h-6 text-primary" />
+                <h4 className="font-display text-lg">Mobilitat sostenible</h4>
+                <p className="text-sm text-muted-foreground">Carrils bici i vianants prioritaris per una ciutat amable.</p>
+              </div>
+              <div className="rounded-xl border border-border bg-card p-6 space-y-3">
+                <Anchor className="w-6 h-6 text-primary" />
+                <h4 className="font-display text-lg">Port verd</h4>
+                <p className="text-sm text-muted-foreground">Connexions marítimes amb baixa petjada de carboni.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
