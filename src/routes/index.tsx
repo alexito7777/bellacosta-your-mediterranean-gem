@@ -985,33 +985,122 @@ function Legislacio() {
 /* ───────────────────────── Religió ───────────────────────── */
 
 function Religio() {
-  const items = [
-    { icon: Heart, title: "Creences", desc: "Tradició religiosa del municipi." },
-    { icon: Flame, title: "Tradicions", desc: "Costums transmesos de generació en generació." },
-    { icon: Sparkles, title: "Festivitats", desc: "Celebracions populars i festes majors." },
-    { icon: Church, title: "Patrimoni religiós", desc: "Esglésies, ermites i béns patrimonials." },
+  const creences = [
+    {
+      icon: Anchor,
+      title: "La Llei de l'Ancoratge",
+      desc: "Es creu que les terres de la Costa Brava van ser concedides als primers habitants amb la condició de conservar-les netes, cuidades i ordenades. Les persones que arriben de fora són benvingudes sempre que respectin les tradicions i la manera de viure del poble.",
+    },
+    {
+      icon: Scale,
+      title: "La Doctrina de la Redempció Forçosa",
+      desc: "Les persones que cometen actes incívics no només reben càstigs legals, sinó que també han de participar en treballs comunitaris (neteja de platges, manteniment d'espais públics) per reparar els seus errors davant la comunitat i davant de Déu.",
+    },
+    {
+      icon: Waves,
+      title: "El Judici de la Marea",
+      desc: "Aquells que fan mal als altres o no respecten les normes acabaran sent expulsats simbòlicament per la 'marea de Déu', perdent el privilegi de formar part de la comunitat.",
+    },
+  ];
+  const simbols = [
+    { icon: Sparkles, title: "El Far Creuat", desc: "Creu cristiana amb forma de far que projecta llum. Representa la guia moral i la protecció del poble davant dels perills externs." },
+    { icon: Anchor, title: "L'Àncora de Ferro", desc: "Simbolitza l'arrelament a la terra, la força de les tradicions i la importància de mantenir els costums locals." },
+    { icon: Waves, title: "Blau marí i blanc", desc: "Colors litúrgics que representen la puresa, la calma i el respecte pel mar durant les celebracions." },
   ];
   return (
     <section id="religio" className="relative py-24 md:py-32">
-      <div className="container-bell grid gap-16 lg:grid-cols-2 items-center">
-        <div className="relative">
+      <div className="container-bell">
+        <SectionHeader
+          eyebrow="Apartat 8"
+          title="Religió · Cristianisme"
+          subtitle="La religió principal de la nostra ciutat és el cristianisme, concretament el catolicisme, amb una variant pròpia nascuda als pobles del Baix Empordà."
+          center
+        />
+
+        <div className="mt-16 grid gap-10 lg:grid-cols-[1fr_1.1fr] items-start">
           <div className="aspect-[4/5] overflow-hidden rounded-3xl border border-border shadow-2xl">
-            <img
-              src={religioImg}
-              alt="Campanar de l'església de Bellacosta al capvespre"
-              width={1280}
-              height={800}
-              loading="lazy"
-              className="h-full w-full object-cover"
-            />
+            <img src={religioImg} alt="Santuari del Far de la Guaita" className="h-full w-full object-cover" />
+          </div>
+          <div className="space-y-6">
+            <div className="rounded-3xl border border-border bg-card p-8 shadow-sm">
+              <h3 className="font-display text-2xl font-semibold">Trets característics</h3>
+              <p className="mt-3 text-foreground/80 leading-relaxed">
+                Aquesta religió va néixer als pobles del Baix Empordà com una variant diferent del cristianisme
+                tradicional. Segons la creença, Déu va voler que aquest poble fos especial i més segur que els altres.
+                Per això, té la missió de protegir-lo dels perills i de les influències negatives que venen de fora.
+              </p>
+              <p className="mt-3 text-foreground/80 leading-relaxed">
+                És una religió basada en el respecte, l'ordre i la convivència. Els habitants es preocupen els uns
+                pels altres i consideren que complir les normes, mantenir els espais nets i cuidar la tranquil·litat
+                del poble són deures importants per agradar a Déu.
+              </p>
+            </div>
           </div>
         </div>
-        <div>
-          <SectionHeader eyebrow="Apartat 8" title="Religió" subtitle="Espai dedicat al patrimoni espiritual i les tradicions del poble." />
-          <div className="mt-10 grid gap-5 sm:grid-cols-2">
-            {items.map((it) => (
-              <PlaceholderCard key={it.title} {...it} />
+
+        <div className="mt-12">
+          <h3 className="font-display text-3xl font-semibold">Principals creences</h3>
+          <div className="mt-6 grid gap-5 md:grid-cols-3">
+            {creences.map((c) => (
+              <div key={c.title} className="rounded-3xl border border-border bg-card p-6 shadow-sm">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                  <c.icon className="h-5 w-5" />
+                </div>
+                <h4 className="mt-4 font-display text-xl font-semibold">{c.title}</h4>
+                <p className="mt-2 text-sm text-foreground/75 leading-relaxed">{c.desc}</p>
+              </div>
             ))}
+          </div>
+        </div>
+
+        <div className="mt-12">
+          <h3 className="font-display text-3xl font-semibold">Simbologia</h3>
+          <div className="mt-6 grid gap-5 md:grid-cols-3">
+            {simbols.map((s) => (
+              <div key={s.title} className="rounded-3xl border border-border bg-sand/40 p-6">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-secondary/20 text-primary">
+                  <s.icon className="h-5 w-5" />
+                </div>
+                <h4 className="mt-4 font-display text-xl font-semibold">{s.title}</h4>
+                <p className="mt-2 text-sm text-foreground/75 leading-relaxed">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-12 rounded-3xl border border-border bg-card p-8 shadow-sm">
+          <div className="flex items-center gap-3">
+            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
+              <Church className="h-5 w-5" />
+            </div>
+            <h3 className="font-display text-3xl font-semibold">El Santuari del Far de la Guaita</h3>
+          </div>
+          <div className="mt-6 grid gap-6 md:grid-cols-3">
+            <div>
+              <h4 className="font-display text-xl font-semibold">Exterior</h4>
+              <p className="mt-2 text-sm text-foreground/80 leading-relaxed">
+                Construït sobre els penya-segats de la Costa Brava amb pedra extreta de la mateixa zona. L'edifici
+                principal té forma de vaixell capgirat i la façana és una gran torre circular que funciona com un far
+                real. Cada nit, la seva llum il·lumina el mar i el poble per recordar que la justícia divina sempre
+                és present.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-display text-xl font-semibold">Interior</h4>
+              <p className="mt-2 text-sm text-foreground/80 leading-relaxed">
+                En lloc d'un altar tradicional ple d'imatges de sants, hi ha un gran finestral amb vista directa al
+                mar. A cada costat, dues enormes àncores de ferro. Els bancs estan fets amb fusta reciclada de barques
+                de pesca antigues, reforçant la connexió amb la història marítima.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-display text-xl font-semibold">Espais de correcció</h4>
+              <p className="mt-2 text-sm text-foreground/80 leading-relaxed">
+                Als soterranis del temple hi ha sales dedicades a l'aprenentatge i la reflexió. Les persones
+                nouvingudes o aquelles que han comès alguna infracció hi participen en activitats sobre civisme,
+                història local i convivència abans de tornar a formar part plenament de la vida del poble.
+              </p>
+            </div>
           </div>
         </div>
       </div>
