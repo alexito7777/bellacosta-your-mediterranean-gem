@@ -44,6 +44,7 @@ import banderaImg from "@/assets/bandera-real.png.asset.json";
 import territoriImg from "@/assets/territori.jpg";
 import economiaImg from "@/assets/economia.jpg";
 import religioImg from "@/assets/religio.jpg";
+import himneAudio from "@/assets/himne-bellacosta.mp3.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -432,54 +433,23 @@ function Himne() {
   return (
     <section id="himne" className="relative py-24 md:py-32">
       <div className="container-bell">
-        <SectionHeader eyebrow="Apartat 2" title="L'Himne" center />
+        <SectionHeader eyebrow="Apartat 2" title="L'Himne" subtitle="Cant a Bellacosta — la nostra ciutat." center />
 
-        <div className="mt-16 grid gap-10 lg:grid-cols-[1fr_1.2fr] items-start">
-          {/* Player */}
-          <div className="rounded-3xl bg-gradient-to-br from-primary to-[oklch(0.35_0.09_240)] p-8 text-primary-foreground shadow-2xl">
-            <div className="flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-white/70">
-              <Music2 className="h-3.5 w-3.5" /> Himne oficial
-            </div>
-            <h3 className="mt-4 font-display text-3xl font-semibold">
-              Cant a Bellacosta
-            </h3>
-            <p className="mt-1 text-sm text-white/70">Composició tradicional</p>
-
-            <div className="mt-8 flex items-center gap-4">
-              <button
-                type="button"
-                aria-label="Reproduir himne"
-                className="flex h-14 w-14 items-center justify-center rounded-full bg-white text-primary shadow-lg hover:scale-105 transition"
-              >
-                <Play className="h-5 w-5 fill-current ml-0.5" />
-              </button>
-              <div className="flex-1">
-                <div className="h-1.5 w-full overflow-hidden rounded-full bg-white/20">
-                  <div className="h-full w-1/3 rounded-full bg-secondary" />
-                </div>
-                <div className="mt-2 flex justify-between text-xs text-white/60 font-mono">
-                  <span>0:48</span>
-                  <span>2:34</span>
-                </div>
-              </div>
-            </div>
-
-            <p className="mt-8 text-xs text-white/50">
-              * Reproductor de mostra — l'àudio definitiu s'incorporarà properament.
-            </p>
+        <div className="mt-16 mx-auto max-w-3xl rounded-3xl bg-gradient-to-br from-primary to-[oklch(0.35_0.09_240)] p-8 md:p-10 text-primary-foreground shadow-2xl">
+          <div className="flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-white/70">
+            <Music2 className="h-3.5 w-3.5" /> Himne oficial
           </div>
+          <h3 className="mt-4 font-display text-3xl md:text-4xl font-semibold">La nostra ciutat</h3>
+          <p className="mt-1 text-sm text-white/70">Himne oficial de Bellacosta</p>
 
-          {/* Tabs */}
-          <div className="grid gap-5 sm:grid-cols-2">
-            {[
-              { icon: ScrollText, title: "Lletra" },
-              { icon: BookOpen, title: "Significat" },
-              { icon: Flame, title: "Història" },
-              { icon: Music2, title: "Àudio" },
-            ].map((it) => (
-              <PlaceholderCard key={it.title} {...it} />
-            ))}
-          </div>
+          <audio
+            controls
+            preload="metadata"
+            src={himneAudio.url}
+            className="mt-8 w-full"
+          >
+            El teu navegador no suporta la reproducció d'àudio.
+          </audio>
         </div>
       </div>
     </section>
