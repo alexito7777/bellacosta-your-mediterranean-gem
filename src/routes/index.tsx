@@ -381,25 +381,45 @@ function SobreBellacosta() {
 /* ───────────────────────── Territori ───────────────────────── */
 
 function Territori() {
-  const items = [
-    { icon: MapIcon, title: "Geografia", desc: "Relleu, costes i orografia del municipi." },
-    { icon: Sun, title: "Clima", desc: "Mediterrani suau, amb estius llargs i hiverns temperats." },
-    { icon: Compass, title: "Límits territorials", desc: "Municipis veïns i extensió del terme." },
-    { icon: TreePine, title: "Medi natural", desc: "Espais protegits, flora i fauna autòctona." },
-  ];
   return (
     <section id="territori" className="relative py-24 md:py-32 bg-sand/40">
       <div className="container-bell">
         <SectionHeader
           eyebrow="Apartat 1"
           title="Territori"
-          subtitle="Un mosaic de cales, penya-segats, pinedes i pobles mariners que defineixen el caràcter de Bellacosta."
+          subtitle="Una ciutat històrica, connectada amb l'aigua, comercial i turística, amb identitat pròpia."
           center
         />
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {items.map((it) => (
-            <PlaceholderCard key={it.title} {...it} description={it.desc} />
-          ))}
+        <div className="mt-16 grid gap-10 lg:grid-cols-2 items-center">
+          <div className="aspect-[4/3] overflow-hidden rounded-3xl border border-border shadow-2xl">
+            <img src={territoriImg} alt="Costa Brava i entorn de Bellacosta" className="h-full w-full object-cover" />
+          </div>
+          <div className="space-y-8">
+            <div className="rounded-3xl border border-border bg-card p-8 shadow-sm">
+              <div className="flex items-center gap-3">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                  <MapIcon className="h-5 w-5" />
+                </div>
+                <h3 className="font-display text-2xl font-semibold">Coordenades</h3>
+              </div>
+              <p className="mt-4 font-mono text-lg text-foreground/90">
+                42º 16′ 28.12″ N · 3º 06′ 42.49″ E
+              </p>
+            </div>
+            <div className="rounded-3xl border border-border bg-card p-8 shadow-sm">
+              <div className="flex items-center gap-3">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-secondary/15 text-primary">
+                  <Compass className="h-5 w-5" />
+                </div>
+                <h3 className="font-display text-2xl font-semibold">Justificació de la ubicació</h3>
+              </div>
+              <p className="mt-4 text-foreground/80 leading-relaxed">
+                Hem triat aquesta ubicació perquè la nostra ciutat pot ser una ciutat històrica, gràcies a
+                la proximitat d'Empúries, connectada amb l'aigua i amb vocació comercial i turística amb una
+                identitat pròpia.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
