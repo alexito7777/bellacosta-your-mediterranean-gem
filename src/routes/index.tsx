@@ -317,31 +317,30 @@ function SobreBellacosta() {
           <SectionHeader
             eyebrow="Sobre Bellacosta"
             title="Benvinguts a Bellacosta"
-            subtitle="Un racó privilegiat de la costa catalana on el mar es fa transparent, els pins toquen la sorra i la història es respira a cada cantó."
+            subtitle="Un poble molt bonic de la costa catalana, on l'aigua del mar és molt clara i els pins arriben gairebé fins a la sorra."
           />
           <div className="mt-8 space-y-5 text-base leading-relaxed text-foreground/80">
             <p>
-              Bellacosta és un petit municipi mediterrani situat al nord-est de
-              Catalunya, a la zona de l'Escala. Les seves cales amagades, els
-              carrers empedrats i la llum daurada del capvespre han enamorat
-              viatgers durant generacions.
+              Bellacosta és un poble molt bonic de la costa catalana, on l'aigua
+              del mar és molt clara i els pins arriben gairebé fins a la sorra.
             </p>
             <p>
-              Aquest text és un text de mostra que serà substituït més endavant
-              amb el contingut definitiu sobre la història, la cultura i la vida
-              quotidiana del nostre poble.
+              Es troba al nord-est de Catalunya, a prop de l'Escala. Té platges i
+              cales amagades, carrers de pedra i unes postes de sol espectaculars
+              que fan que molta gent vulgui tornar-hi una vegada i una altra.
             </p>
             <p>
-              T'invitem a recórrer la nostra web i descobrir tot el que
-              Bellacosta té per oferir-te: paisatge, gastronomia, patrimoni i
-              una identitat única que no et deixarà indiferent.
+              Et convidem a explorar la nostra web i descobrir tot el que pots
+              fer a Bellacosta: gaudir de la natura, tastar el menjar típic de la
+              zona, conèixer la seva història i viure l'ambient especial d'aquest
+              poble mediterrani.
             </p>
           </div>
           <div className="mt-10 grid grid-cols-3 gap-6 border-t border-border pt-8">
             {[
               { k: "12 km", v: "de costa" },
-              { k: "8.4k", v: "habitants" },
-              { k: "320", v: "dies de sol" },
+              { k: "8.400", v: "habitants" },
+              { k: "320", v: "dies de sol a l'any" },
             ].map((s) => (
               <div key={s.v}>
                 <div className="font-display text-3xl font-semibold text-primary">
