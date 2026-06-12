@@ -44,6 +44,7 @@ import banderaImg from "@/assets/bandera-real.png.asset.json";
 import territoriImg from "@/assets/territori.jpg";
 import economiaImg from "@/assets/economia.jpg";
 import religioImg from "@/assets/religio.jpg";
+import himneAudio from "@/assets/himne-bellacosta.mp3.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
